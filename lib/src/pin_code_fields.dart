@@ -545,7 +545,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
     final formattedPastedText = pastedText
         .trim()
         .replaceAll(' ','')
-        .substring(0, min(pastedText.trim().length, widget.length)).trim();
+        .substring(0, min(pastedText.trim().length, widget.length));
 
     final defaultPastedTextStyle = TextStyle(
       fontWeight: FontWeight.bold,
@@ -568,12 +568,6 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
                     TextSpan(
                       text: formattedPastedText,
                       style: widget.pastedTextStyle ?? defaultPastedTextStyle,
-                    ),
-                    TextSpan(
-                      text: "?",
-                      style: TextStyle(
-                        color: Theme.of(context).textTheme.button.color,
-                      ),
                     )
                   ],
                 ),

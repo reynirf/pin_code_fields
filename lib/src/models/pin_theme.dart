@@ -22,6 +22,9 @@ class PinTheme {
   /// Colors of the input fields which don't have inputs. Default is [Colors.red]
   final Color inactiveFillColor;
 
+  /// Color of the input field when in error mode. Default is [Colors.redAccent]
+  final Color errorBorderColor;
+
   /// Border radius of each pin code field
   final BorderRadius borderRadius;
 
@@ -37,11 +40,15 @@ class PinTheme {
   /// this defines the shape of the input fields. Default is underlined
   final PinCodeFieldShape shape;
 
+  /// this defines the padding of each enclosing container of an input field. Default is [0.0]
+  final EdgeInsetsGeometry fieldOuterPadding;
+
   const PinTheme.defaults({
     this.borderRadius = BorderRadius.zero,
     this.fieldHeight = 50,
     this.fieldWidth = 40,
     this.borderWidth = 2,
+    this.fieldOuterPadding = EdgeInsets.zero,
     this.shape = PinCodeFieldShape.underline,
     this.activeColor = Colors.green,
     this.selectedColor = Colors.blue,
@@ -50,21 +57,24 @@ class PinTheme {
     this.activeFillColor = Colors.green,
     this.selectedFillColor = Colors.blue,
     this.inactiveFillColor = Colors.red,
+    this.errorBorderColor = Colors.redAccent,
   });
 
   factory PinTheme(
-      {Color activeColor,
-      Color selectedColor,
-      Color inactiveColor,
-      Color disabledColor,
-      Color activeFillColor,
-      Color selectedFillColor,
-      Color inactiveFillColor,
-      BorderRadius borderRadius,
-      double fieldHeight,
-      double fieldWidth,
-      double borderWidth,
-      PinCodeFieldShape shape}) {
+      {Color? activeColor,
+      Color? selectedColor,
+      Color? inactiveColor,
+      Color? disabledColor,
+      Color? activeFillColor,
+      Color? selectedFillColor,
+      Color? inactiveFillColor,
+      Color? errorBorderColor,
+      BorderRadius? borderRadius,
+      double? fieldHeight,
+      double? fieldWidth,
+      double? borderWidth,
+      PinCodeFieldShape? shape,
+      EdgeInsetsGeometry? fieldOuterPadding}) {
     final defaultValues = PinTheme.defaults();
     return PinTheme.defaults(
       activeColor:
@@ -86,12 +96,18 @@ class PinTheme {
       inactiveFillColor: inactiveFillColor == null
           ? defaultValues.inactiveFillColor
           : inactiveFillColor,
+      errorBorderColor: errorBorderColor == null
+          ? defaultValues.errorBorderColor
+          : errorBorderColor,
       selectedColor:
           selectedColor == null ? defaultValues.selectedColor : selectedColor,
       selectedFillColor: selectedFillColor == null
           ? defaultValues.selectedFillColor
           : selectedFillColor,
       shape: shape == null ? defaultValues.shape : shape,
+      fieldOuterPadding: fieldOuterPadding == null
+          ? defaultValues.fieldOuterPadding
+          : fieldOuterPadding,
     );
   }
 }

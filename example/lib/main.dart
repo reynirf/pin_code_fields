@@ -1,7 +1,8 @@
 import 'dart:async';
-import 'package:flutter/gestures.dart';
+
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+
 import './constants/constants.dart';
 
 void main() => runApp(MyApp());
@@ -14,7 +15,6 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        backgroundColor: Colors.white,
         scaffoldBackgroundColor: Colors.white,
       ),
       home: PinCodeVerificationScreen(

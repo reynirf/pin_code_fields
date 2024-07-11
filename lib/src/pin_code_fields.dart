@@ -653,19 +653,13 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
                 text: TextSpan(
                   text: _dialogConfig.dialogContent,
                   style: TextStyle(
-                    color: Theme.of(context).textTheme.button!.color,
+                    color: Theme.of(context).textTheme.labelLarge!.color,
                   ),
                   children: [
                     TextSpan(
                       text: formattedPastedText,
                       style: widget.pastedTextStyle ?? defaultPastedTextStyle,
                     ),
-                    TextSpan(
-                      text: "?",
-                      style: TextStyle(
-                        color: Theme.of(context).textTheme.button!.color,
-                      ),
-                    )
                   ],
                 ),
               ),
@@ -680,7 +674,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
                 text: TextSpan(
                   text: _dialogConfig.dialogContent,
                   style: TextStyle(
-                      color: Theme.of(context).textTheme.button!.color),
+                      color: Theme.of(context).textTheme.labelLarge!.color),
                   children: [
                     TextSpan(
                       text: formattedPastedText,
@@ -689,7 +683,7 @@ class _PinCodeTextFieldState extends State<PinCodeTextField>
                     TextSpan(
                       text: " ?",
                       style: TextStyle(
-                        color: Theme.of(context).textTheme.button!.color,
+                        color: Theme.of(context).textTheme.labelLarge!.color,
                       ),
                     )
                   ],
